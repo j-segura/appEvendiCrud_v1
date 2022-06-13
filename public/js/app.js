@@ -20109,6 +20109,10 @@ var Crear = function Crear() {
   return __webpack_require__.e(/*! import() */ "resources_js_components_lead_CrearLead_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/lead/CrearLead.vue */ "./resources/js/components/lead/CrearLead.vue"));
 };
 
+var EditUser = function EditUser() {
+  return __webpack_require__.e(/*! import() */ "resources_js_components_user_EditUser_vue").then(__webpack_require__.bind(__webpack_require__, /*! ../components/user/EditUser.vue */ "./resources/js/components/user/EditUser.vue"));
+};
+
 var routes = [{
   name: 'leads',
   path: '/',
@@ -20125,6 +20129,10 @@ var routes = [{
   name: 'crearLead',
   path: '/crear',
   component: Crear
+}, {
+  name: 'editUser',
+  path: '/editUser',
+  component: EditUser
 }];
 var router = (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createRouter)({
   history: (0,vue_router__WEBPACK_IMPORTED_MODULE_0__.createWebHistory)(process.env.BASE_URL),
@@ -41916,7 +41924,7 @@ function compileToFunction(template, options) {
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_Leads_vue":1,"resources_js_components_Administracion_vue":1,"resources_js_components_User_vue":1,"resources_js_components_lead_CrearLead_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_Leads_vue":1,"resources_js_components_Administracion_vue":1,"resources_js_components_User_vue":1,"resources_js_components_lead_CrearLead_vue":1,"resources_js_components_user_EditUser_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};

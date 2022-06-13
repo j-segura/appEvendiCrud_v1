@@ -5,6 +5,7 @@ const Administracion = () => import('../components/Administracion.vue');
 const User = () => import('../components/User.vue');
 
 const Crear = () => import('../components/lead/CrearLead.vue');
+const EditUser = () => import('../components/user/EditUser.vue');
 
 export const routes = [
     {
@@ -26,6 +27,11 @@ export const routes = [
         name: 'crearLead',
         path: '/crear',
         component: Crear
+    },
+    {
+        name: 'editUser',
+        path: '/editUser',
+        component: EditUser
     }
 ];
 
