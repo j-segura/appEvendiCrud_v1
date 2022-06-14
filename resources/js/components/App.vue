@@ -2,9 +2,9 @@
   <main>
     <nav class="nav_bar">
       <div class="logo_space">
-        <a href="#">
-          <img src="../../img/logo.png" alt="evendi" class="logo_nav" />
-        </a>
+        <router-link to="/">
+            <img src="../../img/logo.png" alt="evendi" class="logo_nav" />
+        </router-link>
       </div>
       <div class="box">
         <form class="d-flex buscador" role="search">

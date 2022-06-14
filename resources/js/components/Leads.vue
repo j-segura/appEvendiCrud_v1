@@ -62,11 +62,21 @@
           </div>
         </div>
       </div>
-      
+      <Card/>
     </div>
+
   </main>
 </template>
 
+<script>
+import Card from './lead/Card.vue'
+
+export default {
+  components: {
+    Card
+  }
+}
+</script>
 
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");

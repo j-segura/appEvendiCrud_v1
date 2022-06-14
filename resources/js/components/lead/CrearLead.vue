@@ -95,7 +95,7 @@
                 </div>
             </div>
             <div class="datos mf">
-                <div class="campo linea1" id="pregunta2_linea1">
+                <div class="campo linea1" id="pregunta2_linea1" hidden>
                     <label for="queTipoDePagina">2. ¿Qué tipo de página quieres tener?<span class="red">*</span></label>
                     <select name="select" id="queTipoDePagina" class="select">
                         <option value="Landing page">Landing page</option>

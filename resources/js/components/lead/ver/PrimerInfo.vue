@@ -1,14 +1,5 @@
 <template>
-    <div class="botonDiv">
-        <router-link :to="{ name: 'leads' }" class="volver_btn">
-            <i class="fa-solid fa-angles-left"></i>
-            Volver
-        </router-link>
-        <h1 class="title">Mi Cuenta</h1>
-    </div>
-    <div class="card_mi_cuenta">
-        <input type="checkbox" name="" id="1">
-        <label for="1" class="lbl mo"></label>
+    <div class="card_primerInfo">
         <div class="photo_container">
             <div class="perfil_photo">
                 <img src="" alt="">
@@ -20,18 +11,14 @@
                         d="M24 24C30.0751 24 35 19.0751 35 13C35 6.92487 30.0751 2 24 2C17.9249 2 13 6.92487 13 13C13 19.0751 17.9249 24 24 24Z"
                         stroke="#F130D5" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
-                <button class="edit_photo">
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path
-                            d="M11.5909 1.58492C11.7763 1.39948 11.9964 1.25238 12.2387 1.15201C12.481 1.05165 12.7407 1 13.003 1C13.2652 1 13.5249 1.05165 13.7672 1.15201C14.0095 1.25238 14.2296 1.39948 14.4151 1.58492C14.6005 1.77036 14.7476 1.99051 14.848 2.2328C14.9483 2.47509 15 2.73478 15 2.99703C15 3.25928 14.9483 3.51897 14.848 3.76126C14.7476 4.00355 14.6005 4.2237 14.4151 4.40914L4.88331 13.9409L1 15L2.05909 11.1167L11.5909 1.58492Z"
-                            stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-
-                </button>
             </div>
         </div>
         <div class="info">
             <h2 class="nombre">Juan Camilo Saldarriaga Arenas</h2>
+            <div class="valor_cotizado">
+                <h2>Valor cotizado</h2>
+                <p>$4.200.000</p>
+            </div>
             <div class="datos">
                 <div class="group_one">
                     <div class="dato">
@@ -55,7 +42,18 @@
                         <p>(+57) 312 5877 6495</p>
                     </div>
                 </div>
-                <div>
+                <div class="group_one">
+                    <div class="dato">
+                        <svg width="15" height="18" viewBox="0 0 15 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M14.0909 7.54545C14.0909 12.6364 7.54545 17 7.54545 17C7.54545 17 1 12.6364 1 7.54545C1 5.80949 1.68961 4.14463 2.91712 2.91712C4.14463 1.68961 5.80949 1 7.54545 1C9.28142 1 10.9463 1.68961 12.1738 2.91712C13.4013 4.14463 14.0909 5.80949 14.0909 7.54545Z"
+                                stroke="#7B7B7B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M7.54559 9.72728C8.75057 9.72728 9.72741 8.75045 9.72741 7.54547C9.72741 6.34048 8.75057 5.36365 7.54559 5.36365C6.3406 5.36365 5.36377 6.34048 5.36377 7.54547C5.36377 8.75045 6.3406 9.72728 7.54559 9.72728Z"
+                                stroke="#7B7B7B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p>Bucaramanga - Colombia</p>
+                    </div>
                     <div class="dato">
                         <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
@@ -64,69 +62,46 @@
                         </svg>
                         <p>(60) (4) 445 8796</p>
                     </div>
+                </div>
+                <div>
                     <div class="dato">
-                        <svg width="18" height="17" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path
-                                d="M11.6079 5.34363L14.372 2.5795M15.9515 1L14.372 2.5795L15.9515 1ZM8.36199 8.58951C8.76977 8.99186 9.09393 9.4709 9.31582 9.99905C9.5377 10.5272 9.65292 11.094 9.65484 11.6669C9.65675 12.2397 9.54534 12.8073 9.327 13.3369C9.10866 13.8666 8.78771 14.3478 8.38264 14.7528C7.97756 15.1579 7.49636 15.4789 6.96674 15.6972C6.43712 15.9155 5.86954 16.027 5.29668 16.025C4.72382 16.0231 4.157 15.9079 3.62885 15.686C3.1007 15.4641 2.62166 15.14 2.21931 14.7322C1.42808 13.913 0.990268 12.8158 1.00016 11.6769C1.01006 10.538 1.46688 9.44855 2.27222 8.64321C3.07756 7.83786 4.167 7.38105 5.30589 7.37115C6.44477 7.36126 7.54198 7.79907 8.3612 8.5903L8.36199 8.58951ZM8.36199 8.58951L11.6079 5.34363L8.36199 8.58951ZM11.6079 5.34363L13.9771 7.71288L16.7412 4.94875L14.372 2.5795L11.6079 5.34363Z"
+                                d="M7.18191 17.2272C7.60867 17.2272 7.95463 16.8813 7.95463 16.4545C7.95463 16.0277 7.60867 15.6818 7.18191 15.6818C6.75514 15.6818 6.40918 16.0277 6.40918 16.4545C6.40918 16.8813 6.75514 17.2272 7.18191 17.2272Z"
+                                stroke="#7B7B7B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M15.6819 17.2272C16.1087 17.2272 16.4546 16.8813 16.4546 16.4545C16.4546 16.0277 16.1087 15.6818 15.6819 15.6818C15.2551 15.6818 14.9092 16.0277 14.9092 16.4545C14.9092 16.8813 15.2551 17.2272 15.6819 17.2272Z"
+                                stroke="#7B7B7B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M1 1H4.09091L6.16182 11.3468C6.23248 11.7026 6.42602 12.0222 6.70856 12.2496C6.9911 12.477 7.34463 12.5979 7.70727 12.5909H15.2182C15.5808 12.5979 15.9344 12.477 16.2169 12.2496C16.4994 12.0222 16.693 11.7026 16.7636 11.3468L18 4.86364H4.86364"
                                 stroke="#7B7B7B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                         </svg>
-                        <p>sjhoia.256*</p>
+                        <p>No</p>
+                    </div>
+                    <div class="dato">
+                        <svg width="19" height="16" viewBox="0 0 19 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12.591 1H1V11.0455H12.591V1Z" stroke="#7B7B7B" stroke-width="1.5"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M12.5908 4.86365H15.6817L17.9999 7.18184V11.0455H12.5908V4.86365Z" stroke="#7B7B7B"
+                                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M4.47699 14.9092C5.54391 14.9092 6.40882 14.0443 6.40882 12.9774C6.40882 11.9104 5.54391 11.0455 4.47699 11.0455C3.41007 11.0455 2.54517 11.9104 2.54517 12.9774C2.54517 14.0443 3.41007 14.9092 4.47699 14.9092Z"
+                                stroke="#7B7B7B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                            <path
+                                d="M14.5226 14.9092C15.5896 14.9092 16.4545 14.0443 16.4545 12.9774C16.4545 11.9104 15.5896 11.0455 14.5226 11.0455C13.4557 11.0455 12.5908 11.9104 12.5908 12.9774C12.5908 14.0443 13.4557 14.9092 14.5226 14.9092Z"
+                                stroke="#7B7B7B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        <p>No</p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="habilitar_edicion">
-            <router-link :to="{ name: 'editUser' }">
-                <svg style="margin-right: 7px" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path class="a"
-                        d="M11.5909 1.58492C11.7763 1.39948 11.9964 1.25238 12.2387 1.15201C12.481 1.05165 12.7407 1 13.003 1C13.2652 1 13.5249 1.05165 13.7672 1.15201C14.0095 1.25238 14.2296 1.39948 14.4151 1.58492C14.6005 1.77036 14.7476 1.99051 14.848 2.2328C14.9483 2.47509 15 2.73478 15 2.99703C15 3.25928 14.9483 3.51897 14.848 3.76126C14.7476 4.00355 14.6005 4.2237 14.4151 4.40914L4.88331 13.9409L1 15L2.05909 11.1167L11.5909 1.58492Z"
-                        stroke="#7B7B7B" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-                Habilitar edición
-            </router-link>
         </div>
     </div>
 </template>
 
 <style scoped>
-.title {
-    font-family: 'Century Gothic';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 22px;
-    line-height: 23px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.02em;
-    color: #F130D5;
-}
-
-.botonDiv {
-    width: 100%;
-    height: auto;
-}
-
-.volver_btn {
-    width: 101px;
-    height: 30px;
-    background: #5e227f;
-    border-radius: 5px;
-    font-style: normal;
-    font-weight: 700;
-    font-size: 13px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    letter-spacing: 0.02em;
-    color: #ffffff;
-    text-decoration: none;
-    justify-content: space-between;
-    padding: 0 20px;
-    margin-bottom: 20px;
-}
-
-.card_mi_cuenta {
+.card_primerInfo {
+    /* min-width: 400px; */
     width: 100%;
     min-height: 166px;
     height: auto;
@@ -186,58 +161,43 @@
     margin-right: 37px;
 }
 
-.edit_photo {
-    width: 31px;
-    height: 31px;
-    background: #F130D5;
-    border: none;
-    border-radius: 50%;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    top: 84.5px;
-    right: 0px;
-}
-
 .group_one {
     margin-right: 95px;
 }
 
-.habilitar_edicion {
+.valor_cotizado {
     position: absolute;
-    bottom: 21px;
-    right: 30px;
+    bottom: 42px;
+    right: 52px;
     display: flex;
+    flex-direction: column;
 }
 
-.habilitar_edicion a {
-    text-decoration: none;
+.valor_cotizado h2 {
     font-family: "Quicksand", sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 14px;
-    line-height: 17px;
+    font-size: 17px;
+    line-height: 21px;
+    display: flex;
+    align-items: center;
+    text-align: right;
+    color: #F130D5;
+    margin: 0 !important;
+}
+
+.valor_cotizado p {
+    font-family: "Quicksand", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 27px;
     display: flex;
     align-items: center;
     text-align: right;
     letter-spacing: 0.02em;
     color: #7B7B7B;
-    margin-left: 6px;
-}
-
-
-.habilitar_edicion:hover a,
-.habilitar_edicion:hover .a {
-    color: #F130D5;
-    stroke: #F130D5;
-}
-
-.mo {
-    position: absolute;
-    right: 30px;
-    top: 20px;
-    z-index: 5;
+    margin: 5px 0 0 0 !important;
 }
 
 .title_m {
@@ -254,44 +214,7 @@
     margin-bottom: 18px;
 }
 
-.lbl {
-    width: 38px;
-    height: 22.5px;
-    border: 0.5px solid #ADB5BD;
-    border-radius: 11px;
-    cursor: pointer;
-    transition: .2s;
-    margin-left: 35px;
-}
-
-.lbl::after {
-    content: '';
-    display: block;
-    width: 17px;
-    height: 17px;
-    background: #C4C4C4;
-    border-radius: 50%;
-    position: absolute;
-    top: 1.5px;
-    left: 2px;
-    transition: 0.2s;
-}
-
-input[type="checkbox"]:checked+.lbl::after {
-    left: 17px;
-    background: #FFFFFF;
-}
-
-input[type="checkbox"]:checked+.lbl {
-    background: #F130D5;
-    border: 0.5px solid #F130D5;
-}
-
-input[type="checkbox"] {
-    display: none;
-}
-
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1235px) {
     .perfil_photo {
         margin-right: 0px;
         margin: auto;
@@ -303,10 +226,10 @@ input[type="checkbox"] {
         top: -57.5px;
     }
 
-    .card_mi_cuenta {
+    .card_primerInfo {
         margin-top: 60px;
         padding-top: 70px;
-        padding-bottom: 50px;
+        padding-bottom: 25px;
         justify-content: center;
     }
 
@@ -314,6 +237,7 @@ input[type="checkbox"] {
         display: flex;
         justify-content: center;
         text-align: center;
+        margin-bottom: 10px;
     }
 
     .botonDiv {
@@ -330,21 +254,41 @@ input[type="checkbox"] {
     }
 
     .datos {
-        max-width: 500px;
+        max-width: 700px;
         margin: auto;
         display: flex;
         justify-content: space-between;
         padding: 0 10px;
     }
+
+    .valor_cotizado {
+        position: static;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 720px) {
     .datos {
         flex-direction: column;
     }
 
     .nombre {
         padding: 0 50px;
+        margin-bottom: 21px;
+    }
+
+    .valor_cotizado {
+        position: absolute;
+        bottom: 15px;
+        right: 52px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .valor_cotizado {
+        right: 20px;
     }
 }
 </style>

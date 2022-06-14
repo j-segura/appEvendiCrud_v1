@@ -48,7 +48,7 @@
                             <p>jcamilo.saldarriaga@gmail.com.co</p>
                         </div>
                         <div class="dato">
-                            <svg width="13" height="18" viewBox="0 0 13 18" fill="none"
+                            <svg class="mr" width="13" height="18" viewBox="0 0 13 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
                                     d="M10.6 1H2.6C1.71634 1 1 1.71634 1 2.6V15.4C1 16.2837 1.71634 17 2.6 17H10.6C11.4837 17 12.2 16.2837 12.2 15.4V2.6C12.2 1.71634 11.4837 1 10.6 1Z"
@@ -57,14 +57,11 @@
                                 <path d="M6.6001 13.8H6.6081" stroke="#7B7B7B" stroke-width="1.5" stroke-linecap="round"
                                     stroke-linejoin="round" />
                             </svg>
-                            <input class="edit_datos mt" type="tel" value="(+57) 312 5877 6495"
-                                pattern="\([0-9]{3}\) [0-9]{3}[ -][0-9]{4}"
-                                title="A valid telephone number consist of a 3 digits code area between brackets, a space, the three first digits of the number, a space or hypen (-), and four more digits"
-                                required>
+                            <input class="edit_datos mt" type="tel" value="(+57) 312 5877 6495" required>
                         </div>
                     </div>
                     <div>
-                        <div class="dato">
+                        <div class="dato margin">
                             <svg width="18" height="18" viewBox="0 0 18 18" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
                                 <path
@@ -102,6 +99,10 @@
     box-sizing: border-box;
 }
 
+.mr {
+    margin-right: 18px;
+}
+
 .dato p {
     margin: 0;
     height: 35px;
@@ -109,6 +110,7 @@
 
 .mt {
     margin-top: 7px;
+    margin-left: 0px !important;
 }
 
 .edit_datos {
@@ -293,30 +295,6 @@
     margin-bottom: 18px;
 }
 
-.ver_estado_btn {
-    min-width: 114px;
-    height: 30px;
-    background: #F130D5;
-    border-radius: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
-}
-
-.ver_estado_btn p {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 13px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    letter-spacing: 0.02em;
-    color: #FFFFFF;
-    margin: 0;
-    margin-left: 7px;
-}
-
 .lbl {
     width: 38px;
     height: 22.5px;
@@ -393,21 +371,33 @@ input[type="checkbox"] {
     }
 
     .datos {
-        max-width: 500px;
+        max-width: 600px;
         margin: auto;
         display: flex;
         justify-content: space-between;
-        padding: 0 10px;
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 670px) {
     .datos {
         flex-direction: column;
+        padding: 0 10px;
     }
 
     .nombre {
         padding: 0 50px;
+    }
+
+    .edit_datos {
+        width: 100%;
+    }
+
+    .margin {
+        margin-top: 9px;
+    }
+
+    .mr {
+        margin-right: 21px;
     }
 }
 </style>
