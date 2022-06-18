@@ -62,9 +62,9 @@
           </div>
         </div>
       </div>
-      <Card/>
     </div>
-
+    <Card/>
+    <Card/>
   </main>
 </template>
 

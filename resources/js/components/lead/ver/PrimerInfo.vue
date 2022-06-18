@@ -113,6 +113,7 @@
     align-items: center;
     padding: 0 3%;
     position: relative;
+    margin-top: 26px;
 }
 
 .datos {

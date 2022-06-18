@@ -5,25 +5,33 @@
             Volver
         </router-link>
     </div>
-    <PrimerInfo/>
-    <SegundaInfo/>
+    <Estado class="estado" />
+    <PrimerInfo />
+    <EstadoResponsive class="estado_responsive" />
+    <SegundaInfo />
+    <Notas />
 </template>
 
 <script>
 
 import PrimerInfo from './ver/PrimerInfo'
 import SegundaInfo from './ver/SegundaInfo'
+import Notas from './ver/Notas'
+import Estado from './ver/Estado'
+import EstadoResponsive from './ver/EstadoResponsive'
 
 export default {
     components: {
         PrimerInfo,
-        SegundaInfo
+        SegundaInfo,
+        Notas,
+        Estado,
+        EstadoResponsive
     }
 }
 </script>
 
 <style scoped>
-
 .botonDiv {
     width: 100%;
     height: auto;
@@ -49,4 +57,18 @@ export default {
     margin-bottom: 20px;
 }
 
+.estado_responsive {
+    display: none;
+}
+
+@media screen and (max-width: 1235px) {
+    .estado {
+        display: none;
+    }
+
+    .estado_responsive {
+        display: block;
+    }
+
+}
 </style>

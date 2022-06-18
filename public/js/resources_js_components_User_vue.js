@@ -79,6 +79,8 @@ var _hoisted_14 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createTextVNo
 function render(_ctx, _cache) {
   var _component_router_link = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("router-link");
 
+  var _component_CardUser = (0,vue__WEBPACK_IMPORTED_MODULE_0__.resolveComponent)("CardUser");
+
   return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("div", _hoisted_1, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_router_link, {
     to: {
       name: 'leads'
@@ -102,7 +104,7 @@ function render(_ctx, _cache) {
     _: 1
     /* STABLE */
 
-  })])])], 64
+  })])]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_CardUser)], 64
   /* STABLE_FRAGMENT */
   );
 }

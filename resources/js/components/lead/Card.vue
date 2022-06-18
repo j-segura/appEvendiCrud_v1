@@ -59,6 +59,7 @@
     padding: 0 3%;
     margin-top: 20px;
     border: none;
+    position: relative;
 }
 
 .card .item h3 {
@@ -157,9 +158,15 @@
     }
 
     .ver_estado_btn {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+    }
+
+    /* .ver_estado_btn {
         margin-top: 30px;
         width: 100%;
-    }
+    } */
 
     .estado {
         display: flex;
@@ -179,6 +186,24 @@
 
     .btn_admin {
         padding-top: 30px;
+    }
+}
+
+@media screen and (max-width: 734px) {
+    .card {
+        justify-content: start;
+    }
+}
+
+@media screen and (max-width: 536px) {
+    .ver_estado_btn {
+        position: static;
+        margin-top: 30px;
+        width: 100%;
+    }
+
+    .card {
+        justify-content: space-between;
     }
 }
 </style>

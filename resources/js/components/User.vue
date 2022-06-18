@@ -86,6 +86,7 @@
             </router-link>
         </div>
     </div>
+    <CardUser/>
 </template>
 
 <style scoped>
