@@ -11,8 +11,7 @@
             <div class="datos">
                 <div class="campo">
                     <label for="nombreApallido">Nombre y apellidos<span class="red">*</span></label>
-                    <input type="text" name="" id="nombreApellido" placeholder="Escribe tu nombre y apellido"
-                        class="input" />
+                    <input type="text" id="nombreApellido" placeholder="Escribe tu nombre y apellido" class="input" v-model="nombreApellido"/>
                     <svg class="interrogante" width="12" height="12" viewBox="0 0 12 12" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -26,7 +25,7 @@
                 </div>
                 <div class="campo mart">
                     <label for="correo">Correo del cliente<span class="red">*</span></label>
-                    <input type="email" name="" id="correo" placeholder="Escribe el correo electrónico" class="input" />
+                    <input type="email" id="correo" placeholder="Escribe el correo electrónico" class="input" v-model="email"/>
                     <svg class="interrogante" width="12" height="12" viewBox="0 0 12 12" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -42,8 +41,7 @@
             <div class="datos mf">
                 <div class="campo">
                     <label for="telefono">Teléfono o celular<span class="red">*</span></label>
-                    <input type="text" name="" id="telefono" placeholder="Escribe el teléfono o celular"
-                        class="input" />
+                    <input type="text" id="telefono" placeholder="Escribe el teléfono o celular" class="input" v-model="telefono"/>
                     <svg class="interrogante" width="12" height="12" viewBox="0 0 12 12" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -57,7 +55,7 @@
                 </div>
                 <div class="campo mart">
                     <label for="ciudad">Ciudad<span class="red">*</span></label>
-                    <input type="text" name="" id="ciudad" placeholder="Escoge la ciudad de residencia" class="input" />
+                    <input type="text" name="" id="ciudad" placeholder="Escoge la ciudad de residencia" class="input" v-model="ciudad"/>
                     <svg class="interrogante" width="12" height="12" viewBox="0 0 12 12" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -76,7 +74,7 @@
             <div class="datos">
                 <div class="campo">
                     <label for="paraQue">1. ¿Para qué necesitas el sitio?<span class="red">*</span></label>
-                    <select name="select" id="paraQue" class="select">
+                    <select name="select" id="paraQue" class="select" v-model="para_que">
                         <option value="Difundir info de mi empresa, productos y servicios">
                             Difundir info de mi empresa, productos y servicios
                         </option>
@@ -95,9 +93,9 @@
                 </div>
             </div>
             <div class="datos mf">
-                <div class="campo linea1" id="pregunta2_linea1" hidden>
+                <div class="campo" id="pregunta2_linea1" v-if="mostrar_preguntas_difundir">
                     <label for="queTipoDePagina">2. ¿Qué tipo de página quieres tener?<span class="red">*</span></label>
-                    <select name="select" id="queTipoDePagina" class="select">
+                    <select name="select" id="queTipoDePagina" class="select" v-model="tipo">
                         <option value="Landing page">Landing page</option>
                         <option value="One page (servicios)">
                             One page (servicios)
@@ -115,9 +113,9 @@
                         <path d="M6 8.5H6.00531" stroke="#6C6C6C" stroke-linecap="round" stroke-linejoin="round" />
                     </svg>
                 </div>
-                <div class="campo linea2" id="pregunta2_linea2">
+                <div class="campo" id="pregunta2_linea2" v-if="mostrar_preguntas_vender">
                     <label for="ofreces">2. ¿Ofrece productos o servicios?<span class="red">*</span></label>
-                    <select name="select" id="ofreces" class="select">
+                    <select name="select" id="ofreces" class="select" v-model="ofrece">
                         <option value="Productos">Productos</option>
                         <option value="Servicios">Servicios</option>
                     </select>
@@ -134,11 +132,57 @@
                 </div>
             </div>
         </div>
-        <div class="datos_pedido mart_25 linea2">
+
+        <div class="caracteristicas mart_25" v-if="mostrar_preguntas_vender || mostrar_preguntas_difundir">
+            <label>3. ¿Qué características o secciones le gustaría incluír?<span class="red">*</span></label>
+            <br>
+            <div class="caracteristica">
+                <input type="checkbox" id="nosotros" value="Nosotros" v-model="options">
+                <label for="nosotros">Nosotros</label>
+            </div>
+            <div class="caracteristica">
+                <input type="checkbox" id="mis_productos" value="Mis productos" v-model="options">
+                <label for="mis_productos">Mis productos</label>
+            </div>
+            <div class="caracteristica">
+                <input type="checkbox" id="mis_servicios" value="Mis servicios" v-model="options">
+                <label for="mis_servicios">Mis servicios</label>
+            </div>
+            <div class="caracteristica">
+                <input type="checkbox" id="contacto" value="Contacto" v-model="options">
+                <label for="contacto">Contacto</label>
+            </div>
+            <div class="caracteristica">
+                <input type="checkbox" id="blog" value="Blog" v-model="options">
+                <label for="blog">Blog</label>
+            </div>
+            <div class="caracteristica">
+                <input type="checkbox" id="chat_en_linea" value="Chat en línea" v-model="options">
+                <label for="chat_en_linea">Chat en línea</label>
+            </div>
+            <div class="caracteristica">
+                <input type="checkbox" id="tratamiento_de_datos_personales" value="Tratamiento de datos personales" v-model="options">
+                <label for="tratamiento_de_datos_personales">Tratamiento de datos personales</label>
+            </div>
+            <div class="caracteristica">
+                <input type="checkbox" id="terminos_y_condiciones" value="Términos y condiciones" v-model="options">
+                <label for="terminos_y_condiciones">Términos y condiciones</label>
+            </div>
+            <div class="caracteristica" v-if="mostrar_preguntas_vender">
+                <input type="checkbox" id="politicas_de_envio" value="Politicas de envío" v-model="options">
+                <label for="politicas_de_envio">Politicas de envío</label>
+            </div>
+            <div class="caracteristica" v-if="mostrar_preguntas_vender">
+                <input type="checkbox" id="politicas_de_devoluciones" value="Politicas de devoluciones" v-model="options">
+                <label for="politicas_de_devoluciones">Politicas de devoluciones</label>
+            </div>
+        </div>
+
+        <div class="datos_pedido mart_25 linea2" v-if="mostrar_preguntas_vender">
             <div class="datos">
                 <div class="campo">
                     <label for="carrito">4. ¿Incluir un carrito de compras?<span class="red">*</span></label>
-                    <select name="select" id="carrito" class="select">
+                    <select name="select" id="carrito" class="select" v-model="carrito">
                         <option value="Si">Si</option>
                         <option value="No">No</option>
                     </select>
@@ -156,8 +200,9 @@
             </div>
             <div class="datos mf">
                 <div class="campo">
-                    <label for="envios">5. ¿Requiere integración con plataforma de envíos?<span class="red">*</span></label>
-                    <select name="select" id="envios" class="select">
+                    <label for="envios">5. ¿Requiere integración con plataforma de envíos?<span
+                            class="red">*</span></label>
+                    <select name="select" id="envios" class="select" v-model="envios">
                         <option value="Si">Si</option>
                         <option value="No">No</option>
                     </select>
@@ -174,11 +219,14 @@
                 </div>
             </div>
         </div>
-        <div class="datos_pedido mart_25">
+
+        <div class="datos_pedido mart_25" v-if="mostrar_preguntas_vender || mostrar_preguntas_difundir">
             <div class="datos">
                 <div class="campo">
-                    <label for="servicios">6. ¿Cuántos servicios o productos te gustaría incluir?<span class="red">*</span></label>
-                    <select name="select" id="servicios" class="select">
+                    <label for="servicios"><span v-if="mostrar_preguntas_difundir">4</span><span
+                            v-if="mostrar_preguntas_vender">6</span>. ¿Cuántos servicios o productos te gustaría
+                        incluir?<span class="red">*</span></label>
+                    <select name="select" id="servicios" class="select" v-model="productos">
                         <option value="1 - 5">1 - 5</option>
                         <option value="5 - 10">5 - 10</option>
                         <option value="10 - 20">10 - 20</option>
@@ -203,11 +251,63 @@
     </form>
 </template>
 
+<script>
+
+export default {
+    data() {
+        return {
+            nombreApellido: '',
+            email: '',
+            telefono: '',
+            ciudad: '',
+            para_que: '',
+            mostrar_preguntas_difundir: false,
+            mostrar_preguntas_vender: false,
+            tipo: '',
+            ofrece: '',
+            carrito: '',
+            envios: '',
+            productos: '',
+            options: [],
+            caracteristicas: ''    
+        }
+    },
+
+
+    watch: {
+        para_que: function () {
+            if (this.para_que == 'Difundir info de mi empresa, productos y servicios') {
+                this.mostrar_preguntas_difundir = true
+                this.mostrar_preguntas_vender = false
+                this.ofrece = 'no aplica'
+                this.carrito = 'no aplica'
+                this.envios = 'no aplica'
+                this.politicas_de_envio = 'no aplica'
+                this.politicas_de_devoluciones = 'no aplica'
+            } else if (this.para_que == 'Vender en línea') {
+                this.mostrar_preguntas_vender = true
+                this.mostrar_preguntas_difundir = false
+                this.tipo = 'no aplica'
+            } else {
+                this.mostrar_preguntas_difundir = false
+                this.mostrar_preguntas_vender = false
+            }
+        },
+
+        options: function () {
+            this.caracteristicas = this.options.join(", ")
+        }
+    }
+}
+</script>
+
 <style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap");
 
-
+.caracteristica label {
+    margin-left: 5px;
+}
 
 .mart_25 {
     margin-top: 25px;

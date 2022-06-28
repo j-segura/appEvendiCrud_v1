@@ -42,7 +42,7 @@ export default {
     data() {
         return {
             progreso_barra: 5,
-            valor: 'hola',
+            valor: '',
             en_gestion_activo: false,
             en_negociacion_activo: false,
             en_demo_activo: false,
